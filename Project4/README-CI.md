@@ -1,0 +1,2 @@
+# Manual Docker Image command
+- `Docker run -it -p 5001:4200 -v ~/Desktop/Repos/ceg3120-cicd-Wamski/Project4/angular-site/.:/app/ -w /app node:18-bullseye sh -c "npm install -g @angular/cli && ng serve --host 0.0.0.0" `

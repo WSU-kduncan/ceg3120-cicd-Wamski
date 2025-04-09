@@ -1,9 +1,10 @@
 FROM node:18-bullseye
 
+COPY /angular-site /app
+
+WORKDIR /app
+
 RUN npm install -g @angular/cli
 
-COPY /angular-site /angular-site
+CMD ng serve --host 0.0.0.0
 
-WORKDIR /angular-site
-
-RUN ng serve --host 0.0.0.0

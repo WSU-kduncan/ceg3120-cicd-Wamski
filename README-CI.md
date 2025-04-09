@@ -67,3 +67,8 @@ CLI Authentication:
 
 ## My docker repo:
 https://hub.docker.com/repository/docker/wamski/wasky-ceg3120/general
+
+## Resources
+- Running a Dockerfile: `docker run --help`
+  - Also for running shell commands `sh -c ""`: https://docs.docker.com/reference/cli/docker/container/exec/
+- Pushing a docker image: https://docs.docker.com/get-started/introduction/build-and-push-first-image/

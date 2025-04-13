@@ -68,6 +68,44 @@ CLI Authentication:
 ## My docker repo:
 https://hub.docker.com/repository/docker/wamski/wasky-ceg3120/general
 
+## Setting up your Github Repository Secrets
+- First create a Personal access token with read and write permissions similar to how
+one was created for logging into the CLI. Give this a name of `Github Actions` so that
+ if you ever need to remove the key, you know which one to delete.
+  - Once all of this is set, select generate and copy the key.
+- Next, go to your Github repo settings and scroll down to secrets and variables, once in the Actions secrets 
+you will see a green button labeled; `New Repository Secret`
+  - You will need to create two named; "DOCKER_TOKEN" and "DOCKER_USERNAME"
+    - In the "DOCKER_TOKEN" paste in the key that you generated with read and write.
+    - In the "DOCKER_USERNAME" write in your docker username.
+  - Both of these will be used in a workflows file to build and push the app within this repo to Docker Hub.
+
+## Setting up Github Workflows to push this app image
+The workflow I created runs every time a commit is pushed to the main branch. This will rebuild the image of the angular app
+and build for both amd64 linux and arm64.
+1. In the root directory of your repos add the following file with the corresponding PATH.
+    - `.github/workflows/DockerPush.yml`
+      - `.github` is a directory that Github will read for different actions and commands
+      - `workflows` is a directory where you can write differnt Github actions that can be preformed based upon a 
+certain event such as `push`.
+      - `DockerPush.yml` is the file that will build and push your image to DockerHub.
+2. In the `DockerPush.yml`
+   - The work flow will use both QEMU and Buildx. Then using the previously set up `DOCKER_USERNAME` and `DOCKER_TOKEN`
+ the Github action will login DockerHub. After logging in, the workflow will attempt to build the image for both AMD54 linux 
+and ARM64 linux. The work flow will then push to your Dockerhub repo.
+     - If this project is recreated in a different Github repo, the following highlighted portions will need to change:
+       - context: `Path/to/your/app`
+       - file: `Path/to/your/Dockerfile`
+       -  tags: ${{ secrets.DOCKER_USERNAME }}/`Your Repo`:latest
+My Workflow: https://github.com/WSU-kduncan/ceg3120-cicd-Wamski/blob/main/.github/workflows/DockerPush.yml
+
+## Testing your workflow
+Once your workflow is completed, go over to your docker hub repo and see when the last change was made. If the change is within
+a few moments of the Github action completed then the github action is working properly.
+- To further test this you could run `docker pull username/repo:latest` and run the image. 
+  - My docker pull: `docker pull wamski/wasky-ceg3120:latest`
+- Then run the pulled image `docker run -it -p 5001:4200 wamski/wasky-ceg3120`
+
 ## Resources
 - Running a Dockerfile: `docker run --help`
   - Also for running shell commands `sh -c ""`: https://docs.docker.com/reference/cli/docker/container/exec/

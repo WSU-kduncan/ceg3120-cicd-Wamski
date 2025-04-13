@@ -74,4 +74,5 @@ https://hub.docker.com/repository/docker/wamski/wasky-ceg3120/general
 - Pushing a docker image: https://docs.docker.com/get-started/introduction/build-and-push-first-image/
 - Docker Actions Login: https://github.com/marketplace/actions/docker-login
 - Docker Build and Push (GitHub Actions): https://docs.docker.com/build/ci/github-actions/secrets/
-  - Docker Build and Push Working directory (Context: https://stackoverflow.com/questions/69918178/is-there-a-way-to-set-path-for-docker-build-with-the-github-action-plugin-docker
+- Docker Build and Push Working directory (Context: https://stackoverflow.com/questions/69918178/is-there-a-way-to-set-path-for-docker-build-with-the-github-action-plugin-docker
+- Docker image multi-platform: https://docs.docker.com/build/ci/github-actions/multi-platform/

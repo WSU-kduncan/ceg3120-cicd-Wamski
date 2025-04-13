@@ -26,5 +26,6 @@ jobs:
         with:
           context: ./Project4       # Changes the working directory to project 4
           file: ./Project4/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/wasky-ceg3120:latest

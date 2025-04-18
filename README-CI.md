@@ -2,6 +2,17 @@
 <h1 align="left">Project 4: Docker Images and Repos</h1>
 <br/>
 
+# Project Objective:
+<img align="right" alt="Diagram" width=50% src="/Images/CI.png">
+
+This project sets of continuous integration of the code on the GitHub repo's main brain to build and push to 
+DockerHub. Using GitHub actions and workflows this enables the automation of these tasks.
+## Tools:
+- GitHub actions / Workflows
+  - These automate the process of building a dockerfile and pushing the resulting image to DockerHub.
+    - docker/login-action@v3: Logs into DockerHub using your username and personal access token.
+    - docker/build-push-action@v6: Builds the project based on the dockerfile and pushes the result to DockerHub.
+- DockerHub
 ## Docker setup:
 For an M-Series Mac, go to `https://www.docker.com/products/docker-desktop/` and select `Download for Mac - Apple Silicon`
 - To make sure docker is installed, first try to open the app so that the backend starts for docker to operate correctly. 
@@ -18,6 +29,7 @@ Then try to docker pull an image, ex: docker pull hello-world
   - `node:18-bullseye`: The image to build on top of.
   - `sh -c`: Runs a list of commands in the container, these commands are seperated by `&&`.
 - To view the angular site after running the command above visit [127.0.0.1:5001](http://127.0.0.1:5001)
+- In your CLI, you should see a line that looks similar to `✔ Compiled successfully.`
   
 
 ## Docker File:  

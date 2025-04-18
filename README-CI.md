@@ -7,7 +7,7 @@
 
 This project sets of continuous integration of the code on the GitHub repo's main brain to build and push to 
 DockerHub. Using GitHub actions and workflows this enables the automation of these tasks.
-## Tools:
+### Tools:
 - GitHub actions / Workflows
   - These automate the process of building a dockerfile and pushing the resulting image to DockerHub.
     - docker/login-action@v3: Logs into DockerHub using your username and personal access token.

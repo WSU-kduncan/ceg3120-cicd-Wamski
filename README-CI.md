@@ -109,7 +109,9 @@ and ARM64 linux. The work flow will then push to your Dockerhub repo.
        - context: `Path/to/your/app`
        - file: `Path/to/your/Dockerfile`
        -  tags: ${{ secrets.DOCKER_USERNAME }}/`Your Repo`:latest
-My Workflow: https://github.com/WSU-kduncan/ceg3120-cicd-Wamski/blob/main/.github/workflows/DockerPush.yml
+My Workflow: 
+       - [New Workflow: CD](https://github.com/WSU-kduncan/ceg3120-cicd-Wamski/blob/main/.github/workflows/DockerPush.yml.old)
+       - [Old Workflow: CI](https://github.com/WSU-kduncan/ceg3120-cicd-Wamski/blob/main/.github/workflows/DockerPush.yml)
 
 ## Testing your workflow
 Once your workflow is completed, go over to your docker hub repo and see when the last change was made. If the change is within

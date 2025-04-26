@@ -1,0 +1,31 @@
+[
+  {
+    "id": "CDScript",
+    "execute-command": "/home/ubuntu/Deployment/CDScript",
+    "trigger-rule": {
+      "and": [
+        {
+          "match": {
+            "type": "value",
+            "parameter": {
+              "source": "payload",
+              "name": "repository.repo_name"
+            },
+            "value": "yourusername/yourimage"
+          }
+        },
+        {
+          "match": {
+            "type": "value",
+            "parameter": {
+              "source": "payload",
+              "name": "push_data.tag"
+            },
+            "value": "latest"
+          }
+        }
+      ]
+    }
+
+  }
+]

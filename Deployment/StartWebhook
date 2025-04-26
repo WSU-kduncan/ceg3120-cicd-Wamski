@@ -1,0 +1,6 @@
+#!/bin/bash
+
+/home/ubuntu/Deployment/CDScript
+
+# Start the webhook
+/usr/bin/webhook -nopanic -hooks /home/ubuntu/Deployment/hooks.json

@@ -11,7 +11,7 @@
               "source": "payload",
               "name": "repository.repo_name"
             },
-            "value": "yourusername/yourimage"
+            "value": "wamski/wasky-ceg3120"
           }
         },
         {

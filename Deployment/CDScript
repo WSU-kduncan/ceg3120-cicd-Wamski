@@ -2,4 +2,4 @@
 docker kill CEG3120
 docker rm CEG3120
 docker pull wamski/wasky-ceg3120:latest
-docker run -it -d --name CEG3120 -p 80:4200 wamski/wasky-ceg3120
+docker run -d --name CEG3120 -p 80:4200 wamski/wasky-ceg3120

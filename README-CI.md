@@ -5,7 +5,7 @@
 # Project Objective:
 <img align="right" alt="Diagram" width=50% src="/Images/CI.png">
 
-This project sets of continuous integration of the code on the GitHub repo's main brain to build and push to 
+This project sets of continuous integration of the code on the GitHub repo's main branch to build and push to 
 DockerHub. Using GitHub actions and workflows this enables the automation of these tasks.
 ### Tools:
 - GitHub actions / Workflows
